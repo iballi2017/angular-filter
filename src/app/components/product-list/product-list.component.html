@@ -1,0 +1,61 @@
+<!-- filtered products -->
+
+<section class="container">
+    <div class="row">
+        <div class="col">
+            <h5>CATEGORIES</h5>
+            <div class="my-4">
+                <!-- Select input for filter -->
+                <select class="form-control form-control-sm" name="" id="" [(ngModel)]="fiterByCategory"
+                    (mouseup)="filter()" style="width:200px">
+                    <!-- <option>All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Laptops">Laptops</option>
+                    <option value="Phones">Phones</option>
+                    <option value="Footwears">Footwears</option> -->
+                    <option>All Categories</option>
+                    <option>Electronics</option>
+                    <option>Laptops</option>
+                    <option>Phones</option>
+                    <option>Footwears</option>
+                </select>
+            </div>
+
+            <div>
+
+                <!-- Text input for filter -->
+                <input type="text" class="" [(ngModel)]="fiterByCategory" (keyup)="filter()" style="width:200px">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="my-5">
+                Price From:
+                <input type="number" [(ngModel)]="bottomPrice" (keyup)="filter()" style="width:90px">
+                To:
+                <input type="number" [(ngModel)]="topPrice" (keyup)="filter()" style="width:90px">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="alert alert-info" role="alert" *ngIf="filteredProducts.length === 0">
+        Product(s) not found!
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-4 col-md-3" *ngFor="let item of filteredProducts">
+            <app-product-item [productItem]="item"></app-product-item>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- <section class="container">
+    <div class="row">
+        <div class="col-12 col-sm-4 col-md-3" *ngFor="let item of products">
+            <app-product-item [productList]="item"></app-product-item>
+        </div>
+    </div>
+</section> -->

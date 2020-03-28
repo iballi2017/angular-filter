@@ -1,0 +1,16 @@
+<div class="card mb-4 shadow-sm">
+    <img class="bd-placeholder-img card-img-top" width="100%"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTJwt-7QcJwNQJTQcXTny9QMmLmIia87z1v4y8SFnX4ZLFoWExA" />
+    <div class="card-body">
+        <h3>{{productItem.name}}</h3>
+        <p class="card-text">{{productItem.price | currency: 'INR'}}</p>
+        <h6>{{productItem.category}}</h6>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" (click)="handleAddToCart()"><small>Add To
+                        Cart</small></button>
+                <button type="button" class="btn btn-sm btn-outline-success"><small>View Details</small></button>
+            </div>
+        </div>
+    </div>
+</div>
